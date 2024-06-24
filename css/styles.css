@@ -9,16 +9,15 @@ body{
 }
 
 article{
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 h1{
     width: 300px;
     margin: 0 auto;
 }
-article> :nth-child(2){
-    margin-bottom: 4rem;
-}
-section> p, form{
+article> :nth-child(2)> p, form{
     box-shadow: 0 10px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 
@@ -28,13 +27,15 @@ section> p, form{
     -o-border-radius: 10px;
 }
 
-section> p{
+article> :nth-child(2)> p{
     background-color: hsl(248, 32%, 49%);
     padding: 1rem 5rem;
     font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
 }
-section> p span{
+article> :nth-child(2)> p span{
     font-weight: 600;
+    color: white;
 }
 
 form{
@@ -67,34 +68,45 @@ button{
     border: none;
     box-shadow: 0 4px hsl(154, 59%, 40%);
 }
-section p{
+form p{
     font-size: .75em;
     color: hsl(246, 25%, 77%);
 }
-section p a{
+form p a{
     color: hsl(0, 100%, 74%) ;
     text-decoration: none;
     font-weight: 600;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
+
+@media only screen and (min-width:1077px) {
+    body{
+        padding: 0 10rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    article{
+        gap: 5rem;
+        flex-direction: row;
+        align-items: center;
+    }
+    article> :first-child{
+        width: 500px;
+        text-align: start;
+    }
+    h1{
+        margin: 0;
+        font-size: 2em;
+    }
+    article> :first-child p{
+        font-size: .75em;
+    }
+    article> :last-child{
+        min-width: 500px;
+    }
+}
