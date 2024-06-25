@@ -68,6 +68,16 @@ button{
     border: none;
     box-shadow: 0 4px hsl(154, 59%, 40%);
 }
+button:hover{
+    background-color: hsl(154, 59%, 47%);
+}
+.button-clicked{
+    margin-top: 4px;
+    background-color: hsl(154, 59%, 40%);
+    box-shadow: 0 -4px hsl(154, 59%, 41%);
+}
+
+
 form p{
     font-size: .75em;
     color: hsl(246, 25%, 77%);

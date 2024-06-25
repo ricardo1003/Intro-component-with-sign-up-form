@@ -1,5 +1,3 @@
-
-
 const formElement = document.getElementsByTagName("form")[0]
 const sendButtonElement = document.getElementsByTagName("button")[0]
 
@@ -22,10 +20,14 @@ function clickOnSend(){
     for (let i = 0; i<formElement.length; i++){
         if (formElement[i].tagName === "INPUT" && formElement[i].value.trim() === ""){
             formElement[i].focus()
+            sendButtonElement.classList.toggle("button-clicked")
             break
             }
         }
 }
+sendButtonElement.addEventListener("mouseout", ()=>{
+    sendButtonElement.classList.remove("button-clicked")
+})
 for (let i = 0; i<formElement.length; i++){
     if (formElement[i].tagName === "INPUT"){       
         formElement[i].addEventListener("input", checkForm)
